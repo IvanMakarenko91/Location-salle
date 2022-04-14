@@ -1,4 +1,6 @@
 
+
+/* Navbar */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -60,4 +62,58 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Section page principale */
+
+
+h1 {
+  text-align: center;
+}
+
+.card {
+  margin: 0;
+  padding: 0;
+}
+
+section button {
+  width: 50%;
+}
+
+.inlouable {
+  opacity: 0.5;
+}
+
+/* Footer -----------------------------------------------   */
+footer {
+  min-height: 25vh;
+  background-color: #272727;
+  color: white;
+}
+
+.barre-yellow {}
+
+.barre-yellow::after {
+  content: "";
+  display: block;
+  margin-top: 15px;
+  width: 80px;
+  height: 3px;
+  background-color: rgb(223, 190, 43);
+}
+
+footer a {
+  color: white;
+}
+
+.fa-brands {
+  font-size: 3rem;
+  margin-right: 50px;
+  color: rgb(0, 110, 255);
+}
+
+.fa-brands:hover {
+  font-size: 3rem;
+  margin-right: 50px;
+  color: rgb(4, 0, 255);
 }
