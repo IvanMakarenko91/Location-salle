@@ -68,6 +68,17 @@ h2 {
   align-items: center;
 }
 
+@media (min-width:1001px) {
+  .menu-ecran {
+    display: none;
+  }
+}
+@media (max-width:1000px) {
+  header {
+    display: none;
+  }
+}
+
 /* Section page principale */
 
 
