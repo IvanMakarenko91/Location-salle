@@ -140,3 +140,9 @@ function validateFields(input) {
     return (true);
   }
 }
+
+const button = document.getElementById('btn');
+ 
+button.addEventListener('click', function(){
+   button.style.backgroundColor = "red";
+});
