@@ -59,5 +59,84 @@ function validateEmail(input) {
 
 // Validation du Numéro de téléphone
 function validatePhoneNumber(input) {
-  return input.value.match(/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/);
+  return input.value.match(/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/); // +33 valide (internationale)
+}
+
+
+
+
+
+
+// Validation des champs de formulaires
+
+function validateFields(input) {
+  let fieldName = input.name;
+  // Validaton de l'input PRENOM
+  if (fieldName == "firstName") {
+      if (!validateRequired(input)) {
+          return false;
+      }
+      if (!validateLenght(input, 2, 20)) {
+          return false;
+      }
+      if (!validateText(input)) {
+          return false;
+      }
+      return (true);
+  }
+
+  // Validaton de l'input NOM
+  if (fieldName == "lastName") {
+    if (!validateRequired(input)) {
+        return false;
+    }
+    if (!validateLenght(input, 2, 20)) {
+        return false;
+    }
+    if (!validateText(input)) {
+        return false;
+    }
+    return (true);
+  }
+
+  // Validaton de l'input EMAIL
+  if (fieldName == "email") {
+    if (!validateRequired(input)) {
+        return false;
+    }
+    if (!validateEmail(input)) {
+        return false;
+    }
+    return (true);
+  }
+
+  // Validaton de l'input NUMERO DE TELEPHONE
+  if (fieldName == "phoneNumber") {
+      if (!validateRequired(input)) {
+          return false;
+      }
+      if (!validatePhoneNumber(input)) {
+          return false;
+      }
+      return (true);
+  }
+
+  // Validaton de l'input VILLE
+  if (fieldName == "sujet") {
+    if (!validateRequired(input)) {
+        return false;
+    }
+    return (true);
+  }
+
+  // Validation de l'input COMMENTAIRE
+  if (fieldName == "comment") {
+    if (!validateRequired(input)) {
+        return false;
+    }
+    if (!validateLenght(input, 15, 1500)) {
+        return false;
+    }
+    return (true);
+  }
 }
