@@ -26,3 +26,38 @@
       });
   }, false)
 })()
+
+
+
+
+
+
+// Création des fonctions de verefications
+
+// Validation d'un champ REQUIRED
+function validateRequired(input) {
+  return !(input.value == null || input.value == "");
+}
+
+// Validation des caractères : LATIN & LETTRES
+function validateText(input) {
+  return input.value.match("^[A-Za-z]+$");
+}
+
+// Validation du nombre de caractéres : MIN & MAX
+function validateLenght(input, minLength, maxLength) {
+    return !(input.value.length < minLength || input.value.length > maxLength);
+}
+
+// Validation d'un e-mail
+function validateEmail(input) {
+  let EMAIL = input.value;
+  let POSAT = EMAIL.indexOf("@");
+  let POSDOT = EMAIL.lastIndexOf(".");
+  return !(POSAT < 1 || (POSDOT - POSAT < 2));
+}
+
+// Validation du Numéro de téléphone
+function validatePhoneNumber(input) {
+  return input.value.match(/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/);
+}
