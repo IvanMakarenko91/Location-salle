@@ -27,6 +27,17 @@ const products = [
 ]
 
 // Fonction retournant le prix par une reduction
-function getPropoPrice(price, percent) {
+function getPromoPrice(price, percent) {
   return price - (price * percent / 100)
+}
+
+// Fonction donnant l'arrondi d'un nombre
+function roundDecimal(number) {
+  const tmp = Math.pow(10,2) // Math.pow retourne l'exposant du chiffre de gauche par celui de droite, ici ce sera 10 ** 10 = 100
+  return Math.round(number * tmp) / tmp // Math.round arrondi le chiffre a l'entier le plus proche.
+}
+
+// Fonction remplaçant une chaine de caractère par un autre modèle.
+function formatPrice(price) {
+  return price.toString().replace(".",",") + " €"
 }
