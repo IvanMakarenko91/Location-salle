@@ -46,6 +46,7 @@ function formatPrice(price) {
   return price.toString().replace(".", ",") + " €"
 }
 
+function evenement() {
 // Boucle permettant d'agir sur le prix de chaque id.
 for (let i = 0; i < products.length; i++) { // A chaque tour de boucle, on increment i de 1.
   let product = document.getElementById(products[i].product)  // A chaque incrementation, on obtient l'identifiant de notre tableau par la veleur de i.
@@ -56,3 +57,7 @@ for (let i = 0; i < products.length; i++) { // A chaque tour de boucle, on incre
   product.innerText = formatPrice(roundedPrice) // innerText permet d'ecrire du code, dans notre cas ce sera a l'id selectionné.
   // Le prix sera interprété avec le resultat du prix arrondi et les points sont remplacés par des virgules. 
   }
+}
+
+let recuperation = document.getElementById('choix3');
+recuperation.addEventListener('click',evenement);
