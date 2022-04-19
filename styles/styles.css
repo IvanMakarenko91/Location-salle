@@ -99,6 +99,21 @@ section button {
   opacity: 0.5;
 }
 
+
+.activation .btn {
+  border: none;
+  outline: none;
+  padding: 0px 8px;
+  background-color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+
+.activation .active, .activation .btn:hover {
+  background-color: #666;
+  color: rgb(255, 255, 255);
+} 
+
 /* Footer -----------------------------------------------   */
 footer {
   min-height: 25vh;

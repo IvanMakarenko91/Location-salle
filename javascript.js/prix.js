@@ -10,7 +10,7 @@ const products = [
   },
   {
     product: "bureau3",
-    price: 1200
+    price: 900
   },
   {
     product: "bureau4",
@@ -46,18 +46,69 @@ function formatPrice(price) {
   return price.toString().replace(".", ",") + " €"
 }
 
-function evenement() {
-// Boucle permettant d'agir sur le prix de chaque id.
 for (let i = 0; i < products.length; i++) { // A chaque tour de boucle, on increment i de 1.
   let product = document.getElementById(products[i].product)  // A chaque incrementation, on obtient l'identifiant de notre tableau par la veleur de i.
   
-  let newPromoPrice = getPromoPrice(products[i].price, 10) // On effectue le calcul de la fonction getPromoPrice, avec comme paramètres le prix de chaque bureau, et sa promotion.
+  let newPromoPrice = getPromoPrice(products[i].price, 0) // On effectue le calcul de la fonction getPromoPrice, avec comme paramètres le prix de chaque bureau, et sa promotion.
   let roundedPrice = roundDecimal(newPromoPrice) // Avec le prix obtenu de la promotion au dessus, on arrondi le chiffre à l'entier le plus proche.
   
   product.innerText = formatPrice(roundedPrice) // innerText permet d'ecrire du code, dans notre cas ce sera a l'id selectionné.
   // Le prix sera interprété avec le resultat du prix arrondi et les points sont remplacés par des virgules. 
   }
+
+function codePromo() {
+for (let i = 0; i < products.length; i++) {
+  let product = document.getElementById(products[i].product) 
+  
+  let newPromoPrice = getPromoPrice(products[i].price, 10) 
+  let roundedPrice = roundDecimal(newPromoPrice) 
+  
+  product.innerText = formatPrice(roundedPrice) + " ->" + products[i].price
+  }
 }
 
-let recuperation = document.getElementById('choix3');
-recuperation.addEventListener('click',evenement);
+function toutesTaxes() {
+  for (let i = 0; i < products.length; i++) { 
+    let product = document.getElementById(products[i].product)
+    
+    let newPromoPrice = getPromoPrice(products[i].price, 0) 
+    let roundedPrice = roundDecimal(newPromoPrice) 
+    
+    product.innerText = formatPrice(roundedPrice) 
+    }
+  }
+
+function horsTva() {
+  for (let i = 0; i < products.length; i++) { 
+    let product = document.getElementById(products[i].product)  
+      
+    let newPromoPrice = getPromoPrice(products[i].price, 20) 
+    let roundedPrice = roundDecimal(newPromoPrice) 
+      
+    product.innerText = formatPrice(roundedPrice)
+    }
+  }
+
+  // Declencher les evenements
+let choiceOne = document.getElementById('choix1');
+let choiceTwo = document.getElementById('choix2');
+let choiceThree = document.getElementById('choix3');
+choiceOne.addEventListener('click',toutesTaxes);
+choiceTwo.addEventListener('click',horsTva);
+choiceThree.addEventListener('click',codePromo);
+
+
+// On selectionne les classes
+var bouttons = document.getElementsByClassName("btn");
+
+for (var i = 0; i < bouttons.length; i++) {
+  bouttons[i].addEventListener("click", function() { // A chaque tour de boucle, on effectue un evenement au click sur un boutton
+    var activer = document.getElementsByClassName("active"); // On selectionne la classe active
+
+      activer[0].className = activer[0].className.replace(" active", ""); // La classe active devient "none" au clic d'un nouveau boutton
+    
+    this.className += " active";
+  })
+}
+
+
