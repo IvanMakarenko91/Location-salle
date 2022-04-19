@@ -107,12 +107,18 @@ section button {
   background-color: #ffffff;
   color: black;
   cursor: pointer;
+  border-radius: 25px;
 }
 
-.activation .active, .activation .btn:hover {
-  background-color: #666;
+.activation .active {
+  background-color: rgb(44, 44, 44);
   color: rgb(255, 255, 255);
 } 
+
+.activation .btn:hover {
+  color: white;
+  background-color: rgb(92, 92, 92);
+}
 
 /* Footer -----------------------------------------------   */
 footer {

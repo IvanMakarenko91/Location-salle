@@ -52,18 +52,21 @@ for (let i = 0; i < products.length; i++) { // A chaque tour de boucle, on incre
   let newPromoPrice = getPromoPrice(products[i].price, 0) // On effectue le calcul de la fonction getPromoPrice, avec comme paramètres le prix de chaque bureau, et sa promotion.
   let roundedPrice = roundDecimal(newPromoPrice) // Avec le prix obtenu de la promotion au dessus, on arrondi le chiffre à l'entier le plus proche.
   
-  product.innerText = formatPrice(roundedPrice) // innerText permet d'ecrire du code, dans notre cas ce sera a l'id selectionné.
+  product.innerText = formatPrice(roundedPrice) + " TTC" // innerText permet d'ecrire du code, dans notre cas ce sera a l'id selectionné.
   // Le prix sera interprété avec le resultat du prix arrondi et les points sont remplacés par des virgules. 
   }
 
 function codePromo() {
 for (let i = 0; i < products.length; i++) {
   let product = document.getElementById(products[i].product) 
-  
+  let li = document.createElement('del')
+  li.innerText = products[i].price + " €"
   let newPromoPrice = getPromoPrice(products[i].price, 10) 
   let roundedPrice = roundDecimal(newPromoPrice) 
   
-  product.innerText = formatPrice(roundedPrice) + " ->" + products[i].price
+  
+  product.innerText = formatPrice(roundedPrice) + " avec code promo "
+  product.append(li) 
   }
 }
 
@@ -74,7 +77,7 @@ function toutesTaxes() {
     let newPromoPrice = getPromoPrice(products[i].price, 0) 
     let roundedPrice = roundDecimal(newPromoPrice) 
     
-    product.innerText = formatPrice(roundedPrice) 
+    product.innerText = formatPrice(roundedPrice) + " TTC"
     }
   }
 
@@ -85,7 +88,7 @@ function horsTva() {
     let newPromoPrice = getPromoPrice(products[i].price, 20) 
     let roundedPrice = roundDecimal(newPromoPrice) 
       
-    product.innerText = formatPrice(roundedPrice)
+    product.innerText = formatPrice(roundedPrice) + " Hors TVA"
     }
   }
 
