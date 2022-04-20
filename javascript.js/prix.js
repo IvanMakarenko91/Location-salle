@@ -115,3 +115,17 @@ for (var i = 0; i < bouttons.length; i++) {
 }
 
 
+
+var slider = document.getElementById("myRange");
+var output = document.getElementById("value");
+
+output.innerHTML = slider.value + "€";
+slider.oninput = function() { // L'événement oninput se produit lorsqu'un élément reçoit une entrée d'utilisateur
+  output.innerHTML = this.value + "€"; // le span reçoit alors la valeur actuelle du slider
+}
+
+slider.addEventListener("mousemove", function(){
+  var x = ((slider.value - slider.min) / (slider.max - slider.min) * 100 ); // ((501-1)/(1500-1)*100) = 33.33%, calcul du %
+  var color = 'linear-gradient(90deg,rgb(230,230,26)' + x + '%, rgb(214,214,214)' + x + '%)';
+  slider.style.background = color;
+})
