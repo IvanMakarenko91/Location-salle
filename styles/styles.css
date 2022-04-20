@@ -58,16 +58,6 @@ h2 {
   background-color: rgb(216, 193, 61);
 }
 
-.cercle {
-  margin-left: 10px;
-  height: 30px;
-  width: 30px;
-  border:2px solid white ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media (min-width:1001px) {
   .menu-ecran {
     display: none;
@@ -91,7 +81,7 @@ h1 {
   padding: 0;
 }
 
-section button {
+section a {
   width: 50%;
 }
 
@@ -103,11 +93,17 @@ section button {
 .activation .btn {
   border: none;
   outline: none;
-  padding: 0px 8px;
+  padding: 15px 8px;
   background-color: #ffffff;
   color: black;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 50px;
+}
+
+@media (max-width:410px) {
+  .activation .btn {
+    border-radius: 10px;
+  }
 }
 
 .activation .active {
@@ -118,6 +114,10 @@ section button {
 .activation .btn:hover {
   color: white;
   background-color: rgb(92, 92, 92);
+}
+
+.fa-location-dot {
+  font-size: 1.3rem;
 }
 
 /* Footer -----------------------------------------------   */

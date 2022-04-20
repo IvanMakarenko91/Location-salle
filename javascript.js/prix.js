@@ -2,27 +2,27 @@
 const products = [
   {
     product: "bureau1",
-    price: 1000
-  },
-  {
-    product: "bureau2",
-    price: 1250
-  },
-  {
-    product: "bureau3",
-    price: 900
-  },
-  {
-    product: "bureau4",
     price: 800
   },
   {
+    product: "bureau2",
+    price: 550
+  },
+  {
+    product: "bureau3",
+    price: 875
+  },
+  {
+    product: "bureau4",
+    price: 1100
+  },
+  {
     product: "bureau5",
-    price: 700
+    price: 1000
   },
   {
     product: "bureau6",
-    price: 1400
+    price: 400
   },
   {
     product: "bureau7",
@@ -102,7 +102,7 @@ choiceThree.addEventListener('click',codePromo);
 
 
 // On selectionne les classes
-var bouttons = document.getElementsByClassName("btn");
+var bouttons = document.querySelectorAll(".activation .btn")
 
 for (var i = 0; i < bouttons.length; i++) {
   bouttons[i].addEventListener("click", function() { // A chaque tour de boucle, on effectue un evenement au click sur un boutton
