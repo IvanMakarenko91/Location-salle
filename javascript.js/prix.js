@@ -1,30 +1,37 @@
 // Tableau contenant le nom des produits et leur prix
 const products = [
   {
+    cadre: "card1",
     product: "bureau1",
     price: 800
   },
   {
+    cadre: "card2",
     product: "bureau2",
     price: 550
   },
   {
+    cadre: "card3",
     product: "bureau3",
     price: 875
   },
   {
+    cadre: "card4",
     product: "bureau4",
     price: 1100
   },
   {
+    cadre: "card5",
     product: "bureau5",
     price: 1000
   },
   {
+    cadre: "card6",
     product: "bureau6",
     price: 400
   },
   {
+    cadre: "card7",
     product: "bureau7",
     price: 950
   }
@@ -128,4 +135,12 @@ slider.addEventListener("mousemove", function(){
   var x = ((slider.value - slider.min) / (slider.max - slider.min) * 100 ); // ((501-1)/(1500-1)*100) = 33.33%, calcul du %
   var color = 'linear-gradient(90deg,rgb(230,230,26)' + x + '%, rgb(214,214,214)' + x + '%)';
   slider.style.background = color;
+
+  for (j = 0; j < products.length; j++) {
+    var cadres = document.getElementsByClassName(products[j].cadre);
+
+    if (slider.value < products[j].price) {
+      cadres[0].className = cadres[0].className.replace(products[j].cadre, "display-no");
+    }
+  }
 })
